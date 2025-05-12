@@ -1,6 +1,6 @@
 # cloudbuild.yaml
 steps:
-- name: 'docker/compose:1.19.0'
+- name: 'docker/compose:1.29.2'
   args: [
     '-f', 'docker-compose-deps.yml',
     '-f', 'docker-compose-ingress.yml',
