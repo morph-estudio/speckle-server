@@ -1,6 +1,12 @@
 # cloudbuild.yaml
-options:
-  logging: CLOUD_LOGGING_ONLY
 steps:
 - name: 'docker/compose:1.19.0'
-  args: ['up', '-d']
+  args: [
+    '-f', 'docker-compose-deps.yml',
+    '-f', 'docker-compose-ingress.yml',
+    '-f', 'docker-compose-speckle.yml',
+    '-f', 'docker-compose-test.yml',
+    'up', '-d'
+  ]
+options:
+  logging: CLOUD_LOGGING_ONLY
